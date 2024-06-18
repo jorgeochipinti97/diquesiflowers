@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 import useProducts from "@/hook/useProducts";
 import {
@@ -27,7 +28,7 @@ export default function Home() {
   const { products, loading, error } = useProducts();
 
   return (
-    <div className="min-h-screen bg-[#FFC8DD] ">
+    <div className="min-h-screen bg-[#FFC8DD] pb-20">
       <div className="fixed flex left-5 bottom-5 z-50 ">
         <div onClick={() => push("https://walink.co/e61bd2")}>
           <svg
@@ -77,7 +78,7 @@ export default function Home() {
         <div
           onClick={() =>
             push(
-              "https://www.instagram.com/zeta.casinook?igsh=MW01ODZnZm8wenB0bw=="
+              "https://www.instagram.com/lafloreria_dediquesi/"
             )
           }
         >
@@ -175,7 +176,7 @@ export default function Home() {
       <div className="fixed right-5 z-50 bottom-10   mt-5 ">
         <Cart />
       </div>
-      <div className="flex justify-center pt-10">
+      <div className="flex justify-center pt-5">
         <img src="/logo.png" className="w-12/12 md:w-7/12" />
       </div>
       <div className="mt-10">
@@ -191,7 +192,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 ">
         <div className="w-full flex justify-center mt-10  md:hidden ">
           <EmblaCarousel
-            images={["/she3.jpg", "/she1.jpg", "/she2.jpg"]}
+            images={["/she1.webp", "/she2.webp", "/she3.webp", "/she4.webp"]}
             heigh={"60vh"}
           />
         </div>
@@ -200,17 +201,22 @@ export default function Home() {
             <CarouselContent>
               <CarouselItem>
                 <div className="p-1">
-                  <img src="/she3.jpg" className="rounded-xl" />
+                  <img src="/she1.webp" className="rounded-xl" />
                 </div>
               </CarouselItem>
               <CarouselItem>
                 <div className="p-1">
-                  <img src="/she1.jpg" className="rounded-xl" />
+                  <img src="/she2.webp" className="rounded-xl" />
                 </div>
               </CarouselItem>
               <CarouselItem>
                 <div className="p-1">
-                  <img src="/she2.jpg" className="rounded-xl" />
+                  <img src="/she3.webp" className="rounded-xl" />
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="p-1">
+                  <img src="/she4.webp" className="rounded-xl" />
                 </div>
               </CarouselItem>
             </CarouselContent>
@@ -220,7 +226,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center">
-          <div className="flex w-11/12   items-start flex-col justify-start md:mr-5 p-5 rounded-xl mt-10 bg-white">
+          <div className="flex w-11/12   shadowLow items-st art flex-col justify-start md:mr-5 p-5 rounded-xl mt-10 bg-white">
             <p className=" text-3xl text-pink-950  font-bold font-geist ">
               HOLA COMUNIDAD🫶🏻
             </p>
@@ -260,7 +266,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex justify-center mt-10 md:mt-0">
-          <img src="/diquesi.jpg" className="h-[50vh] rounded-xl" />
+          <img src="/diqusii.webp" className=" w-10/12 md:w-6/12 rounded-xl shadowLow" />
         </div>
       </div>
       <section>
@@ -268,22 +274,14 @@ export default function Home() {
           🌸 Workshop de Flores 🌸
         </p>
 
-        <p className="text-pink-950 text-center  tracking-tighter text-md md:text-3xl">
+        <div className="text-pink-950 text-center mx-2 tracking-tighter text-md md:text-3xl">
           Aprende a crear hermosos arreglos florales en un ambiente relajado y
           amigable.
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="flex justify-center">
-              <img
-                src="/workshop.jpg"
-                className="w-10/12 md:w-12/12 md:mt-10  mt-5 rounded-xl"
-              />
-            </div>
+          {/* <div className="">
             <div className="flex justify-center">
               <Card className="p-3 w-11/12 mt-5">
-                <CardTitle className="text-center">
-Información
-                </CardTitle>
-                <CardContent >
+                <CardTitle className="text-center">Información</CardTitle>
+                <CardContent>
                   <div className="text-start mt-5">
                     <p className="text-md mb-2">
                       <span className="text-2xl">📅</span> Sábado 08 de Junio
@@ -321,87 +319,168 @@ Información
                 </CardContent>
                 <CardFooter className="text-center mt-5">
                   <Button
-                  size='lg'
-                  className='text-xl'
-                  onClick={()=>push('https://walink.co/4b9b27')}
+                    size="lg"
+                    className="text-xl"
+                    onClick={() => push("https://walink.co/4b9b27")}
                   >
                     ¡Reserva tu lugar ahora!
                   </Button>
                 </CardFooter>
               </Card>
             </div>
-          </div>
-        </p>
+          </div> */}
+        </div>
+        <div className="flex justify-center">
+          <Button className="my-5 text-xl" size="lg">
+            Más Información
+          </Button>
+        </div>
+        <div className="flex justify-center">
+          <img
+            src="/workshop.jpg"
+            className="w-10/12 md:w-5/12 md:mt-10  mt-5 rounded-xl"
+          />
+        </div>
       </section>
+
       <section>
         <p className="text-center font-bold text-4xl md:text-7xl text-pink-950 mt-10">
           Nuestros puntos de PickUp
         </p>
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-4">
-          <div className="flex justify-center">
-            <Card className="p-3 w-11/12 mt-5">
-              <CardTitle className="text-center">Cream & Cream</CardTitle>
-              <CardContent>
-                <div className="flex justify-center mt-5">
-                  <img src="/crema.jpg" className="w-10/12  rounded-xl" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <p className="text-md">
-                  <span className="text-2xl">📍</span> Gral. Las Heras 394,
-                  Monte Grande.
-                </p>
-              </CardFooter>
-            </Card>
+        <ScrollArea className="w-screen whitespace-nowrap rounded-md border">
+          <div className="flex">
+            <div className="flex justify-center">
+              <Card className="p-3 w-11/12 mt-5">
+                <CardTitle className="text-center">Cream & Cream</CardTitle>
+                <CardContent>
+                  <div className="flex justify-center mt-5">
+                    <img src="/crema.jpg" className="w-10/12  rounded-xl" />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <p className="text-md">
+                    <span className="text-2xl">📍</span> Gral. Las Heras 394,
+                    Monte Grande.
+                  </p>
+                </CardFooter>
+              </Card>
+            </div>
+            <div className="flex justify-center">
+              <Card className="p-3 w-11/12 mt-5">
+                <CardTitle className="text-center">Isolina</CardTitle>
+                <CardContent>
+                  <div className="flex justify-center mt-5">
+                    <img src="/isolina.jpg" className="w-10/12  rounded-xl" />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <p className="text-md">
+                    <span className="text-2xl">📍</span> Eugenio Rebizo 681,
+                    Monte Grande.{" "}
+                  </p>
+                </CardFooter>
+              </Card>
+            </div>
+            <div className="flex justify-center">
+              <Card className="p-3 w-11/12 mt-5">
+                <CardTitle className="text-center">HomeQueen</CardTitle>
+                <CardContent>
+                  <div className="flex justify-center mt-5">
+                    <img src="/homequeen.jpg" className="w-10/12 rounded-xl" />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  {" "}
+                  <p className="text-md">
+                    <span className="text-2xl">📍</span> Leandro Alem 1298 Monte
+                    grande
+                  </p>
+                </CardFooter>
+              </Card>
+            </div>
+            <div className="flex justify-center">
+              <Card className="p-3 w-11/12 mt-5">
+                <CardTitle className="text-center">De Ollas y Sueños</CardTitle>
+                <CardContent>
+                  <div className="flex justify-center mt-5">
+                    <img src="/deollas.jpg" className="w-10/12 rounded-xl" />
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <p className="text-md">
+                    <span className="text-2xl">📍</span> Gral. Las Heras 525,
+                    Monte Grande.
+                  </p>
+                </CardFooter>
+              </Card>
+            </div>
           </div>
-          <div className="flex justify-center">
-            <Card className="p-3 w-11/12 mt-5">
-              <CardTitle className="text-center">Cream & Cream</CardTitle>
-              <CardContent>
-                <div className="flex justify-center mt-5">
-                  <img src="/isolina.jpg" className="w-10/12  rounded-xl" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <p className="text-md">
-                  <span className="text-2xl">📍</span> Eugenio Rebizo 681, Monte
-                  Grande.{" "}
-                </p>
-              </CardFooter>
-            </Card>
-          </div>
-          <div className="flex justify-center">
-            <Card className="p-3 w-11/12 mt-5">
-              <CardTitle className="text-center">Cream & Cream</CardTitle>
-              <CardContent>
-                <div className="flex justify-center mt-5">
-                  <img src="/homequeen.jpg" className="w-10/12 rounded-xl" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                {" "}
-                <p className="text-md">
-                  <span className="text-2xl">📍</span> Leandro Alem 1298 Monte
-                  grande
-                </p>
-              </CardFooter>
-            </Card>
-          </div>
-          <div className="flex justify-center">
-            <Card className="p-3 w-11/12 mt-5">
-              <CardTitle className="text-center">Cream & Cream</CardTitle>
-              <CardContent>
-                <div className="flex justify-center mt-5">
-                  <img src="/deollas.jpg" className="w-10/12 rounded-xl" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <p className="text-md">
-                  <span className="text-2xl">📍</span> Gral. Las Heras 525,
-                  Monte Grande.
-                </p>
-              </CardFooter>
-            </Card>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </section>
+      <section className="grid grid-cols-1 md:grid-cols-2">
+        <div className="flex justify-start items-center flex-col">
+          <p className="font-geist md:text-6xl text-pink-950   text-center mt-10 font-bold text-4xl tracking-tighter">
+            Suscripciones de flores
+          </p>
+          <Button
+            className="mt-5 bg-[#fefae0] text-black border border-black font-bold hover:bg-yellow-200 transition-all"
+            size="lg"
+          >
+            {" "}
+            Más información
+          </Button>
+          <img src="/suscripcion.webp" className="w-10/12  md:w-5/12 my-5 rounded-xl " />
+        </div>
+        <div className="flex justify-start items-center flex-col">
+          <p className="font-geist md:text-6xl text-pink-950   text-center mt-10 font-bold text-4xl tracking-tighter">
+            Orquidias
+          </p>
+          <Button
+            className="mt-5 bg-[#fefae0] text-black border border-black font-bold hover:bg-yellow-200 transition-all"
+            size="lg"
+          >
+            {" "}
+            Pedí la tuya
+          </Button>
+          <div className="w-full flex justify-center mt-10   border-xl ">
+            {/* <EmblaCarousel
+              images={[
+                "/plantas1.webp",
+                "/plantas2.webp",
+                "/plantas3.webp",
+                "/plantas4.webp",
+                "/plantas5.webp",
+              ]}
+              heigh={"60vh"}
+            /> */}
+
+            <Carousel className="w-8/12 md:w-5/12  ">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <img src="/plantas1.webp" className="rounded-xl" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <img src="/plantas2.webp" className=" rounded-xl" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <img src="/plantas3.webp" className="  rounded-xl" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <img src="/plantas4.webp" className="  rounded-xl" />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </section>
@@ -413,17 +492,8 @@ Información
         <div className="grid grid-cols-1 md:grid-cols-3">
           {products
             .filter((r) => r.category == "estacion")
-            .map((e,index) => (
-              <CardProduct
-              key={index}
-                product={{
-                  title: e.title,
-                  images: e.images,
-                  price: e.price,
-                  description: e.description,
-                  sizes: e.sizes,
-                }}
-              />
+            .map((e, index) => (
+              <CardProduct key={index} product={e} />
             ))}
         </div>
       </section>
@@ -436,17 +506,8 @@ Información
         <div className="grid grid-cols-1 md:grid-cols-4">
           {products
             .filter((r) => r.category == "premium")
-            .map((e,index) => (
-              <CardProduct
-              key={index}
-                product={{
-                  title: e.title,
-                  images: e.images,
-                  price: e.price,
-                  description: e.description,
-                  sizes: e.sizes,
-                }}
-              />
+            .map((e, index) => (
+              <CardProduct key={index} product={e} />
             ))}
         </div>
       </section>
@@ -459,19 +520,42 @@ Información
         <div className="grid grid-cols-1 md:grid-cols-3">
           {products
             .filter((r) => r.category == "rosas")
-            .map((e,index) => (
-              <CardProduct
-
-key={index}              product={{
-                  title: e.title,
-                  images: e.images,
-                  price: e.price,
-                  description: e.description,
-                  sizes: e.sizes,
-                }}
-              />
+            .map((e, index) => (
+              <CardProduct key={index} product={e} />
             ))}
         </div>
+      </section>
+      <section>
+        <p className="font-geist md:text-7xl text-pink-950   text-center mt-10 font-bold text-4xl tracking-tighter">
+          {" "}
+          Nuestros Box
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          {products
+            .filter((r) => r.category == "boxes")
+            .map((e, index) => (
+              <CardProduct key={index} product={e} />
+            ))}
+        </div>
+      </section>
+      <section>
+        <p className="font-geist md:text-7xl text-pink-950    text-center mt-10 font-bold text-4xl tracking-tighter">
+          Ramos aniversario
+        </p>
+        <div className="flex justify-center">
+          <Button
+            className="my-5 bg-[#fefae0] text-black border border-black font-bold hover:bg-yellow-200 transition-all"
+            size="lg"
+          >
+            {" "}
+            Consulta por el tuyo
+          </Button>
+        </div>
+        <EmblaCarousel
+          images={["/ani1.webp", "/ani2.webp", "/ani3.webp", "/ani4.webp"]}
+          heigh={"60vh"}
+        />
       </section>
     </div>
   );

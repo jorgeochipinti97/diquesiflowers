@@ -16,13 +16,14 @@ import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { ScrollArea } from "./ui/scroll-area";
+import { useToast } from "./ui/use-toast";
 
 //AGREGAR CARTELITO DE ENVIOS
 
 export const ProductForm = ({ product }) => {
   const fileTypes = ["JPG", "PNG", "GIF", "JPEG", "AVIF", "WEBP"];
   const [images_, setImages_] = useState([]);
-
+const {toast} = useToast()
   const {
     register,
     handleSubmit,
@@ -88,14 +89,20 @@ export const ProductForm = ({ product }) => {
     if (!product) {
       // Lógica para crear un nuevo producto
       const response = await axios.post("/api/products", productData);
-      console.log(response);
+      toast({
+        title: "Producto creado correctamente",
+        description: "Gracias por confiar en nosotros",
+      });
     } else {
       // Lógica para actualizar un producto existente
       const response = await axios.put("/api/products", {
         _id: product._id,
         ...productData,
       });
-      console.log(response);
+      toast({
+        title: "Producto modificado correctamente",
+        description: "Gracias por confiar en nosotros",
+      });
     }
   };
 
