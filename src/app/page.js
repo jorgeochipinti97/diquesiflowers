@@ -77,9 +77,7 @@ export default function Home() {
         </div>
         <div
           onClick={() =>
-            push(
-              "https://www.instagram.com/lafloreria_dediquesi/"
-            )
+            push("https://www.instagram.com/lafloreria_dediquesi/")
           }
         >
           <svg
@@ -266,7 +264,10 @@ export default function Home() {
           </p>
         </div>
         <div className="flex justify-center mt-10 md:mt-0">
-          <img src="/diqusii.webp" className=" w-10/12 md:w-6/12 rounded-xl shadowLow" />
+          <img
+            src="/diqusii.webp"
+            className=" w-10/12 md:w-6/12 rounded-xl shadowLow"
+          />
         </div>
       </div>
       <section>
@@ -331,7 +332,11 @@ export default function Home() {
           </div> */}
         </div>
         <div className="flex justify-center">
-          <Button className="my-5 text-xl" size="lg">
+          <Button
+            className="my-5 text-xl"
+            size="lg"
+            onClick={() => push("https://walink.co/e61bd2")}
+          >
             Más Información
           </Button>
         </div>
@@ -347,7 +352,7 @@ export default function Home() {
         <p className="text-center font-bold text-4xl md:text-7xl text-pink-950 mt-10">
           Nuestros puntos de PickUp
         </p>
-        <ScrollArea className="w-screen whitespace-nowrap rounded-md border">
+        <ScrollArea className="w-screen whitespace-nowrap rounded-md ">
           <div className="flex">
             <div className="flex justify-center">
               <Card className="p-3 w-11/12 mt-5">
@@ -426,11 +431,15 @@ export default function Home() {
           <Button
             className="mt-5 bg-[#fefae0] text-black border border-black font-bold hover:bg-yellow-200 transition-all"
             size="lg"
+            onClick={() => push("https://walink.co/e61bd2")}
           >
             {" "}
             Más información
           </Button>
-          <img src="/suscripcion.webp" className="w-10/12  md:w-5/12 my-5 rounded-xl " />
+          <img
+            src="/suscripcion.webp"
+            className="w-10/12  md:w-5/12 my-5 rounded-xl "
+          />
         </div>
         <div className="flex justify-start items-center flex-col">
           <p className="font-geist md:text-6xl text-pink-950   text-center mt-10 font-bold text-4xl tracking-tighter">
