@@ -446,6 +446,8 @@ export default function Home() {
           <Button
             className="mt-5 bg-[#fefae0] text-black border border-black font-bold hover:bg-yellow-200 transition-all"
             size="lg"
+            onClick={() => push("https://walink.co/e61bd2")}
+
           >
             {" "}
             Pedí la tuya
