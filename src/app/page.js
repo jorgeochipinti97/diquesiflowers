@@ -342,7 +342,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center">
           <img
-            src="/workshop.jpg"
+            src="/workshop.webp"
             className="w-10/12 md:w-5/12 md:mt-10  mt-5 rounded-xl"
           />
         </div>
