@@ -1,6 +1,6 @@
 "use client";
 import { CardProduct } from "@/components/CardProduct";
-import { Cart } from "@/components/Cart";
+
 import EmblaCarousel from "@/components/Embla/EmblaCarousel";
 import {
   Accordion,
@@ -171,9 +171,7 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <div className="fixed right-5 z-50 bottom-10   mt-5 ">
-        <Cart />
-      </div>
+ 
       <div className="flex justify-center pt-5">
         <img src="/logo.png" className="w-12/12 md:w-7/12" />
       </div>

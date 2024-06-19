@@ -12,12 +12,14 @@ import {
 import { formatPrice } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import useCartStore from "@/hook/useCartStore";
+import { useToast } from "@/components/ui/use-toast";
 const Page = () => {
   const [producto, setProducto] = useState({});
   const searchParams = useSearchParams();
   const { products } = useProducts();
   const agregarProducto = useCartStore((state) => state.agregarProducto);
-
+  const { toast } = useToast()
+  
   useEffect(() => {
     const d = searchParams.get("_id");
     d && products && setProducto(products.filter((e) => e._id == d)[0]);
@@ -61,6 +63,10 @@ const Page = () => {
                     title: producto.title,
                     price: producto.price,
                     images: producto.images,
+                  });
+                  toast({
+                    title: "Agregado al carrito correctamente",
+                    description: "Gracias por confiar en nosotros",
                   });
                 }}
               >
